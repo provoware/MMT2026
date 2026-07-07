@@ -8,3 +8,4 @@
 - localStorage-Fallback gegen blockierte Browser-Speicher eingebaut.
 - Tests: bash -n, node --check, statischer Smoke-Test, Browser-Runtime-Smoke-Test.
 - Panel-Reihenfolge kann jetzt je Modul mit ↑/↓ angepasst und lokal gespeichert werden; das hilft, wichtige Arbeitsbereiche ohne langes Scrollen nach vorne zu holen.
+- Standardpakete können auf der Startseite erneut ergänzt werden; dabei werden nur fehlende Vorlagen hinzugefügt und eigene Daten nicht überschrieben.
