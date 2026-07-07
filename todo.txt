@@ -16,6 +16,10 @@ Aktueller Befund
 - README.md dokumentiert den aktuellen Entwicklungsstand jetzt als grobe
   Prozentzahl. Diese Zahl muss bei jeder weiteren Iteration aktualisiert
   werden, sobald sich der reale Projektstand aendert.
+- AGENTS.md ist jetzt auf planungsbasiertes, patchbasiertes, codesparsames
+  und traffic-sparsames Arbeiten optimiert. Jede naechste Iteration muss vor
+  dem Patch Ziel, Dateien, betroffene Bloecke, Patchgrund, Risiken,
+  bewusste Nicht-Aenderungen und Schritte festhalten.
 
 Prioritaet 0 — Projektstand vervollstaendigen
 ---------------------------------------------
@@ -65,6 +69,17 @@ Prioritaet 2 — Analyse nach vollstaendigem Projektimport
 
 Prioritaet 3 — Kleinster sinnvoller Umsetzungsschritt
 -----------------------------------------------------
+- [ ] Vor jedem Patch Mini-Plan notieren:
+  - [ ] Ziel
+  - [ ] betroffene Dateien
+  - [ ] betroffene Zeilen/Bloecke
+  - [ ] Patchgrund
+  - [ ] Risiken
+  - [ ] bewusste Nicht-Aenderungen
+  - [ ] konkrete Schrittliste
+- [ ] Pro Iteration nur zusammenhaengende, klein pruefbare Aenderungen umsetzen.
+- [ ] Folgeprobleme hier notieren, nicht ungeplant mitbearbeiten.
+
 - [ ] Workspace-Grundsystem zuerst zentral vorbereiten:
   - [ ] CSS-Klassen pv-workspace, pv-panel und pv-panel-body ergaenzen.
   - [ ] PV.Layout-Grundfunktionen in assets/provoware-core.js ergaenzen.
@@ -108,7 +123,8 @@ Bewusst nicht in dieser Iteration
 Naechste konkrete Iteration
 ---------------------------
 1. Vollstaendigen Projektstand bereitstellen oder einchecken.
-2. Git-Status und Dateibaum pruefen.
-3. start_linux.sh und index.html smoke-testen.
-4. Module und Datenmodelle erfassen.
-5. Erst danach den ersten kleinen Workspace-Core-Patch planen.
+2. IMPORTPROTOKOLL.md direkt beim Einspielen ausfuellen.
+3. Git-Status und Dateibaum pruefen.
+4. start_linux.sh und index.html smoke-testen, sofern vorhanden.
+5. Module und Datenmodelle erfassen.
+6. Erst danach den ersten kleinen Workspace-Core-Patch planen.

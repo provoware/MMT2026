@@ -12,6 +12,32 @@ Arbeite immer nach diesem Grundsatz:
 
 Keine Cloudpflicht. Keine Tracking-Funktionen. Keine externen CDN-Abhängigkeiten. Keine versteckten Online-Aufrufe. Alles muss lokal, transparent und für Laien bedienbar bleiben.
 
+### 0.1 Planungs-, Patch- und Sparsamkeitsmodus
+
+Arbeite strikt planungsbasiert, patchbasiert, codesparsam und traffic-sparsam. Vor jeder Änderung müssen kurz feststehen:
+
+- Ziel der Iteration.
+- Betroffene Dateien.
+- Betroffene Zeilen, Abschnitte oder Blöcke, soweit ohne Zusatzaufwand ermittelbar.
+- Patchgrund.
+- Risiken.
+- Bewusste Nicht-Änderungen.
+- Konkrete Schrittliste.
+
+Danach gilt:
+
+- Nur begründet betroffene Dateien ändern.
+- Nur exakt betroffene Stellen patchen.
+- Keine globalen Umformatierungen.
+- Keine kosmetischen Nebenanpassungen an stabilen Bereichen.
+- Keine unnötigen Dateioperationen, Suchläufe, Downloads oder Netzwerkzugriffe.
+- Keine Wiederholungsprüfungen ohne neue Änderung.
+- Validierung erst am Ende einer kleinen Patch-Iteration ausführen.
+- Nur relevante Prüfungen ausführen: Syntax, direkt betroffene Logik, direkt betroffene Ausgabe und vorhandene direkt betroffene Tests.
+- Folgeprobleme, die nicht zum geplanten Patch gehören, in `todo.txt` notieren statt ungeplant mitzubearbeiten.
+
+Alle Ausgaben sollen einfach verständlich sein. Fachbegriffe kurz erklären, wenn sie nötig sind.
+
 ---
 
 ## 1. Projektziel der nächsten Stufe
@@ -39,17 +65,29 @@ Jede Entwicklungsrunde muss mindestens eine kleine, nachvollziehbare Verbesserun
 
 Wenn eine Runde nur Technik oder interne Struktur ändert, muss trotzdem mindestens ein kleiner sichtbarer Nutzen für Laien, Datensicherheit oder Vorlagenqualität enthalten sein. Diese Verbesserung wird im Änderungsprotokoll ausdrücklich genannt.
 
+### 1.2 Iterationsgröße und Wartbarkeit
+
+Jede Iteration soll klein genug bleiben, dass Ursache, Wirkung und Risiko nachvollziehbar sind. Empfohlene Grenzen:
+
+- Hilfsdateien möglichst bis 150 Zeilen.
+- Normale Module möglichst bis 300 Zeilen.
+- Kernmodule möglichst bis 500 Zeilen.
+- Funktionen möglichst unter 40 Zeilen halten; ab 60 Zeilen Teilbarkeit prüfen.
+
+Bei Überschreitung nicht automatisch umbauen. Erst Nutzen, Risiko und passenden Schnitt planen. Logik, Konfiguration, Daten, Tests und Dokumentation getrennt halten.
+
 ---
 
 ## 2. Bestand schützen
 
 Vor jeder Änderung:
 
-- [ ] Projekt einmal vollständig öffnen.
-- [ ] `start_linux.sh` testen.
-- [ ] `index.html` öffnen.
-- [ ] alle Module öffnen.
-- [ ] vorhandene Dateien nicht löschen, sondern versioniert verbessern.
+- [ ] Prüfen, ob die erwarteten Projektdateien überhaupt vorhanden sind.
+- [ ] Wenn die Websuite vorhanden ist: Projekt einmal vollständig öffnen.
+- [ ] Wenn vorhanden und betroffen: `start_linux.sh` testen.
+- [ ] Wenn vorhanden und betroffen: `index.html` öffnen.
+- [ ] Wenn vorhanden und betroffen: alle betroffenen Module öffnen.
+- [ ] Vorhandene Dateien nicht löschen, sondern versioniert verbessern.
 - [ ] vor größeren Umbauten Backup-Ordner anlegen, z. B. `backup_before_v2_3/`.
 - [ ] vorhandene `localStorage`-Keys nicht ohne Migration ändern.
 - [ ] bestehende V2.x-Daten weiterhin lesbar halten.
@@ -1050,7 +1088,8 @@ Provoware Modul Suite.desktop
 
 ### Phase 1 — Analyse
 
-- [ ] Projektstruktur prüfen.
+- [ ] Projektstruktur mit kleinstem sinnvollem Suchumfang prüfen.
+- [ ] Wenn Basisdateien fehlen: keine App-Dateien raten, sondern Befund in `todo.txt` und `IMPORTPROTOKOLL.md` festhalten.
 - [ ] Module erfassen.
 - [ ] CSS-Layout analysieren.
 - [ ] Scroll-Probleme markieren.
@@ -1093,14 +1132,17 @@ Provoware Modul Suite.desktop
 
 ### Phase 6 — Tests
 
+- [ ] Nur vorhandene und direkt betroffene Dateien prüfen.
 - [ ] statische Checks.
-- [ ] Playwright-Smoke-Test.
+- [ ] Playwright-Smoke-Test erst nach vorhandener startbarer App.
 - [ ] manueller Laientest.
 - [ ] Import/Export-Test.
 - [ ] alte Datenmigration testen.
 
 ### Phase 7 — Übergabe
 
+- [ ] Kompaktes Änderungsprotokoll pro Iteration.
+- [ ] Zwei konstruktive Empfehlungen für die nächste sinnvolle Arbeit.
 - [ ] Changelog.
 - [ ] Testprotokoll.
 - [ ] Entwicklerübergabe.
@@ -1121,6 +1163,8 @@ Provoware Modul Suite.desktop
 - [ ] Keine versteckten automatischen Uploads.
 - [ ] Keine komplizierte Installation als Pflicht.
 - [ ] Keine Terminalpflicht für normale Nutzung, wenn vermeidbar.
+- [ ] Keine Platzhalter-App erzeugen, solange der echte Projektstand fehlt.
+- [ ] Keine Tests installieren, solange keine testbare App vorhanden ist.
 
 ---
 
@@ -1147,4 +1191,8 @@ Start:
 Wichtig:
 - Daten bleiben lokal.
 - Alte V2.x-Daten wurden nicht überschrieben.
+
+Empfehlungen:
+- ...
+- ...
 ```
