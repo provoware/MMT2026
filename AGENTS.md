@@ -29,6 +29,18 @@ Baue die Suite zu einer deutlich besseren **offline Creator-Zentrale** aus:
 
 ---
 
+## 1.1 Pflicht pro Entwicklungsrunde
+
+Jede Entwicklungsrunde muss mindestens eine kleine, nachvollziehbare Verbesserung in einem dieser Bereiche liefern:
+
+- [ ] Nutzerfreundlichkeit: einfachere Bedienung, klarere Hilfe, weniger Scrollen, verständlichere Fehler oder bessere Startführung.
+- [ ] Robustheit: sichereres Speichern, defensivere Imports, bessere Fehlerisolierung, Migrationen, Backups oder Validierung.
+- [ ] Vorlagen und Standardinhalte: mehr oder bessere Genres, Stimmungen, Stile, Songstrukturen, Promptvorlagen, Textbausteine, Hashtags oder Hilfetipps.
+
+Wenn eine Runde nur Technik oder interne Struktur ändert, muss trotzdem mindestens ein kleiner sichtbarer Nutzen für Laien, Datensicherheit oder Vorlagenqualität enthalten sein. Diese Verbesserung wird im Änderungsprotokoll ausdrücklich genannt.
+
+---
+
 ## 2. Bestand schützen
 
 Vor jeder Änderung:
@@ -403,6 +415,52 @@ daten/defaults/
   todo_categories.default.json
   help_tips.default.json
 ```
+
+### Optimale Speicherstruktur für wachsende Vorlagen
+
+Standardinhalte müssen separat, versionierbar und ohne Überschreiben von Nutzerdaten wachsen können. Dafür wird die Vorlagenbasis in kleine Dateien aufgeteilt:
+
+```text
+daten/defaults/
+  manifest.default.json                 # Übersicht, Versionen, Reihenfolge, Kategorien
+  genres/
+    base.default.json                    # stabile Grundliste
+    extensions.default.json              # neue Ergänzungen je Version
+  moods/
+    base.default.json
+    extensions.default.json
+  styles/
+    base.default.json
+    extensions.default.json
+  prompts/
+    songwriting.default.json
+    seo.default.json
+    image.default.json
+    developer.default.json
+  textblocks/
+    hooks.default.json
+    bridges.default.json
+    outros.default.json
+  song_structures/
+    suno.default.json
+    experimental.default.json
+  hashtags/
+    music.default.json
+    platform.default.json
+  help/
+    tips.default.json
+    onboarding.default.json
+```
+
+Regeln für diese Struktur:
+
+- [ ] Große Sammeldateien vermeiden; lieber kleine, fachlich getrennte Dateien.
+- [ ] Jede Vorlagendatei enthält `schemaVersion`, `packId`, `title`, `updatedAt`, `items`.
+- [ ] Jeder Eintrag enthält mindestens `id`, `name`, `category`, `tags`, `source`, `version`.
+- [ ] IDs stabil halten, damit spätere Updates nur fehlende oder neuere Standard-Einträge ergänzen.
+- [ ] Neue Vorlagen zuerst als `extensions.default.json` oder eigenes Themenpaket ergänzen, nicht ungeprüft in Basislisten mischen.
+- [ ] Nutzerdefinierte Inhalte bleiben getrennt in den bestehenden App-Speichern und werden nie durch Defaults ersetzt.
+- [ ] Import/Seed-Logik arbeitet paketweise und protokolliert, welche Packs ergänzt wurden.
 
 ### Seed-Regel
 
