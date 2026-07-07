@@ -7,6 +7,8 @@
     "check:js": "node --check assets/provoware-core.js && node --check modules/_registry.js",
     "check:static": "node static-smoke.mjs",
     "check:browser": "node browser-smoke.mjs",
-    "test": "bash -n start_linux.sh && npm run check:js && npm run check:static && npm run check:browser"
+    "test": "bash -n start_linux.sh && npm run check:js && npm run check:static && npm run check:browser",
+    "check:selfheal": "node self-heal.mjs",
+    "check:autonomous": "npm run check:selfheal && npm test"
   }
 }

@@ -8,3 +8,12 @@ PROVOWARE MODUL SUITE V2.3 — START HIER
 5. Oben Layout wählen: Auto, 3, 9 oder Fokus.
 6. Daten bleiben lokal im Browser.
 7. Regelmäßig Export-Center öffnen und JSON sichern.
+
+AUTOMATISCHE PRÜFUNG FÜR ENTWICKLER
+
+- Sicher prüfen und einfache Strukturprobleme selbst beheben:
+  npm run check:selfheal
+- Danach alle lokalen Prüfungen ausführen:
+  npm run check:autonomous
+
+Diese Prüfung arbeitet offline. Sie legt nur fehlende Arbeitsordner an, normalisiert JSON-Dateien und stoppt bei riskanten Fehlern mit klarer Meldung.
