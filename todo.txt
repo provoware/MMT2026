@@ -15,3 +15,4 @@ Offen für nächste Iteration:
 - Registry automatisch aus Manifest erzeugen
 - Screenreader-Test mit echter Hilfstechnologie
 - Laientest mit externer Person
+- README später um Screenshots oder kurze Bildanleitung ergänzen, sobald eine visuelle Startprüfung eingeplant ist.
