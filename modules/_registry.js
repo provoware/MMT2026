@@ -13,7 +13,7 @@ simpleModule({id:'start',title:'Start',icon:'⌂',purpose:'Einstieg, Status, Suc
 { id:'stats',title:'Statistik',html:`<div class="grid two">${stats()}</div>`},
 { id:'search',title:'Globale Suche',html:'<p>Strg+K öffnet die Kommandopalette für Module und Inhalte.</p>'},
 { id:'today',title:'Heute',html:`<div class="list">${Data.all('todos').filter(x=>x.date===today()).map(x=>`<div class=item>${esc(x.title)}</div>`).join('')||'<p class=muted>Heute nichts eingetragen.</p>'}</div>`},
-{ id:'defaults',title:'Standarddaten',html:`<p>Genres: ${Data.all('genres').length}, Stimmungen: ${Data.all('moods').length}, Stile: ${Data.all('styles').length}</p><button onclick="PV.Data.seed();PV.UI.toast('Defaults ergänzt','ok')">Defaults ergänzen</button>`},
+{ id:'defaults',title:'Standarddaten',html:`<p>Genres: ${Data.all('genres').length}, Stimmungen: ${Data.all('moods').length}, Stile: ${Data.all('styles').length}</p><p class="muted">Ergänzt nur fehlende Vorlagen. Eigene Daten bleiben erhalten.</p><button onclick="const n=PV.Data.seed(true);PV.UI.toast(n?n+' Standards ergänzt':'Keine fehlenden Standards gefunden','ok');PV.App.render('start')">Standardpakete erneut ergänzen</button>`},
 { id:'help',title:'Erste Schritte',html:'<ol><li>Modul wählen.</li><li>In Formular eintragen.</li><li>Speichern oder kopieren.</li><li>Export sichern.</li></ol>'},
 { id:'safety',title:'Daten',html:'<p>Daten bleiben im Browser. Kein Tracking. Kein CDN. Keine Cloudpflicht.</p>'},
 { id:'changes',title:'Letzte Änderungen',html:`<div class=list>${items('logs')}</div>`},
