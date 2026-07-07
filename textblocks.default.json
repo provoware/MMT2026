@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "2.3.0",
+  "packId": "textblocks",
+  "title": "Textbausteine",
+  "updatedAt": "2026-07-07",
+  "items": [
+    {
+      "id": "tb-hook",
+      "name": "Hook-Druck",
+      "category": "Hook",
+      "tags": [
+        "hardtechno"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3",
+      "text": "[HOOK:]\nkurze Lines\nharter Schnitt\nBass im Nacken"
+    }
+  ]
+}

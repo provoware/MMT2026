@@ -1,0 +1,198 @@
+{
+  "schemaVersion": "2.3.0",
+  "packId": "moods",
+  "title": "Stimmungen",
+  "updatedAt": "2026-07-07",
+  "items": [
+    {
+      "id": "mood-roh",
+      "name": "roh",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-dunkel",
+      "name": "dunkel",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-treibend",
+      "name": "treibend",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-bissig",
+      "name": "bissig",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-zynisch",
+      "name": "zynisch",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-kalt",
+      "name": "kalt",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-verschwitzt",
+      "name": "verschwitzt",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-mechanisch",
+      "name": "mechanisch",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-provokant",
+      "name": "provokant",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-systemkritisch",
+      "name": "systemkritisch",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-schwarz",
+      "name": "schwarz",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-hypnotisch",
+      "name": "hypnotisch",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-aggressiv",
+      "name": "aggressiv",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-absurd",
+      "name": "absurd",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-trashig",
+      "name": "trashig",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-ironisch",
+      "name": "ironisch",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-dystopisch",
+      "name": "dystopisch",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-eskalierend",
+      "name": "eskalierend",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "mood-direkt",
+      "name": "direkt",
+      "category": "mood",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    }
+  ]
+}

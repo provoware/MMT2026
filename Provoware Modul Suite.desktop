@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Provoware Modul Suite Dummy
-Comment=Dummy-Datei: Dieser Starter ist noch unfertig.
-Exec=./start_linux.sh
+Name=Provoware Modul Suite
+Comment=Lokale Offline Creator-Websuite
+Exec=sh -c "cd %k && ./start_linux.sh"
 Terminal=true
+Categories=AudioVideo;Development;Utility;

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "2.3.0",
+  "packId": "song_structures",
+  "title": "Songstrukturen",
+  "updatedAt": "2026-07-07",
+  "items": [
+    {
+      "id": "structure-suno",
+      "name": "Suno Hardtechno Standard",
+      "category": "Suno",
+      "tags": [
+        "suno"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3",
+      "text": "[INTRO:]\n[BUILD-UP:]\n[VERSE 1:]\n[PRE-HOOK:]\n[HOOK:]\n[DROP:]\n[OUTRO:]"
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "2.3.0",
+  "packId": "genres",
+  "title": "Genres",
+  "updatedAt": "2026-07-07",
+  "items": [
+    {
+      "id": "genre-hard-techno",
+      "name": "Hard Techno",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-acid-techno",
+      "name": "Acid Techno",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-schranz",
+      "name": "Schranz",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-peak-time-techno",
+      "name": "Peak Time Techno",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-industrial-techno",
+      "name": "Industrial Techno",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-dark-rave",
+      "name": "Dark Rave",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-rave-punk",
+      "name": "Rave Punk",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-doom-pop",
+      "name": "Doom Pop",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-gothic-industrial",
+      "name": "Gothic Industrial",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-boom-bap",
+      "name": "Boom Bap",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-punk-rap",
+      "name": "Punk Rap",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-trap-metal",
+      "name": "Trap Metal",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-ebm",
+      "name": "EBM",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-noise-techno",
+      "name": "Noise Techno",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-glitch",
+      "name": "Glitch",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-gabber",
+      "name": "Gabber",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-satire-rap",
+      "name": "Satire Rap",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "genre-minimal-lyrics",
+      "name": "Minimal Lyrics",
+      "category": "genre",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    }
+  ]
+}

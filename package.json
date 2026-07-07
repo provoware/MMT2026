@@ -1,5 +1,12 @@
 {
-  "name": "provoware-modul-suite-dummy",
+  "name": "mmt2026-provoware-modul-suite",
+  "version": "2.3.0",
   "private": true,
-  "description": "Dummy-Datei: package.json ist noch unfertig."
+  "type": "module",
+  "scripts": {
+    "check:js": "node --check assets/provoware-core.js && node --check modules/_registry.js",
+    "check:static": "node tests/static-smoke.mjs",
+    "check:browser": "node tests/browser-smoke.mjs",
+    "test": "bash -n start_linux.sh && npm run check:js && npm run check:static && npm run check:browser"
+  }
 }

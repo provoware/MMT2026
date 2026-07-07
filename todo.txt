@@ -1,139 +1,17 @@
-Provoware Modul Suite — TODO fuer naechste Iteration
-Stand: 2026-07-07
+Provoware Modul Suite — TODO nach V2.3
 
-Ziel dieser Datei
------------------
-Diese Datei haelt den aktuellen Befund und die naechsten Schritte fest.
-Sie ersetzt keine Umsetzung. Sie verhindert, dass auf einem unvollstaendigen
-Repository spekulativ Code erzeugt wird.
+Erledigt:
+- startbare Offline-Suite
+- Workspace Auto/1/2/3/4/6/9/Fokus
+- Panels einklappbar/maximierbar
+- Standarddaten
+- Laienstart
+- Export/Import
+- Tests und Übergabe
 
-Aktueller Befund
-----------------
-- Das Repository enthaelt aktuell AGENTS.md, README.md, todo.txt und IMPORTPROTOKOLL.md.
-- Die eigentliche Websuite ist im Arbeitsbaum nicht vorhanden.
-- Pruefung am 2026-07-07 02:13 UTC: Es wurde kein Importarchiv bis Tiefe 3
-  gefunden (`.zip`, `.tar`, `.tar.gz`, `.tgz`, `.7z`, `.rar`).
-- Die erwartete Basisstruktur fehlt weiterhin vollstaendig: `index.html`,
-  `assets/`, `modules/`, `daten/`, `sicherungen/`, `start_linux.sh` und
-  `README_START_HIER.txt` sind nicht vorhanden.
-- Ohne index.html, assets/, modules/, daten/ und start_linux.sh kann keine
-  fachlich sichere Modul-, Layout-, Start- oder Datenanalyse erfolgen.
-- README.md dokumentiert den aktuellen Entwicklungsstand jetzt als grobe
-  Prozentzahl. Diese Zahl muss bei jeder weiteren Iteration aktualisiert
-  werden, sobald sich der reale Projektstand aendert.
-- AGENTS.md ist jetzt auf planungsbasiertes, patchbasiertes, codesparsames
-  und traffic-sparsames Arbeiten optimiert. Jede naechste Iteration muss vor
-  dem Patch Ziel, Dateien, betroffene Bloecke, Patchgrund, Risiken,
-  bewusste Nicht-Aenderungen und Schritte festhalten.
-
-Prioritaet 0 — Projektstand vervollstaendigen
----------------------------------------------
-- [ ] Echten Projektstand in dieses Repository uebernehmen.
-- [ ] Projektstand vor dem Kopieren separat entpacken und grob mit der erwarteten
-  Basisstruktur vergleichen.
-- [ ] Import-Protokoll direkt beim Einspielen in `IMPORTPROTOKOLL.md` ausfuellen:
-  - Quelle/Archivname des eingespielten Projektstands notieren.
-  - Datum und Uhrzeit des Imports notieren.
-  - Abweichende oder fehlende Dateien sofort als offene Punkte eintragen.
-  - Vorhandene Nutzer- oder Beispieldaten nicht umbenennen, nicht verschieben
-    und nicht bereinigen, bevor sie analysiert wurden.
-- [ ] Erwartete Basisdateien pruefen:
-  - [ ] index.html
-  - [ ] assets/provoware-core.css
-  - [ ] assets/provoware-core.js
-  - [ ] modules/_registry.js
-  - [ ] modules/modules.manifest.json
-  - [ ] modules/module.songwriter.html
-  - [ ] modules/module.genre-generator.html
-  - [ ] modules/module.textblocks.html
-  - [ ] modules/module.notes.html
-  - [ ] modules/module.todo-calendar.html
-  - [ ] daten/
-  - [ ] sicherungen/
-  - [ ] start_linux.sh
-  - [ ] README_START_HIER.txt
-- [ ] Nach dem Import Git-Status pruefen und unerwartete Dateien markieren.
-
-Prioritaet 1 — Schutz vor unbeabsichtigten Datenverlusten
----------------------------------------------------------
-- [ ] Vor Umbauten Backup-Ordner anlegen, z. B. backup_before_v2_3/.
-- [ ] Bestehende localStorage-Keys erfassen.
-- [ ] Bestehende V2.x-Datenmodelle dokumentieren.
-- [ ] Migrationsbedarf notieren, bevor Keys oder Datenformen geaendert werden.
-- [ ] Sicherstellen, dass Standarddaten keine Nutzerdaten ueberschreiben.
-
-Prioritaet 2 — Analyse nach vollstaendigem Projektimport
---------------------------------------------------------
-- [ ] index.html im Browser oeffnen.
-- [ ] start_linux.sh ausfuehren und Verhalten notieren.
-- [ ] Alle vorhandenen Module oeffnen.
-- [ ] CSS-Layout in assets/provoware-core.css gezielt pruefen.
-- [ ] Gemeinsame Funktionen in assets/provoware-core.js erfassen.
-- [ ] Registry und Manifest vergleichen.
-- [ ] Vorhandene Import-/Export-Funktionen erfassen.
-- [ ] Vorhandene Hilfen, Tooltips und Starttexte erfassen.
-- [ ] Bestehende Tests und Testkonfiguration suchen.
-
-Prioritaet 3 — Kleinster sinnvoller Umsetzungsschritt
------------------------------------------------------
-- [ ] Vor jedem Patch Mini-Plan notieren:
-  - [ ] Ziel
-  - [ ] betroffene Dateien
-  - [ ] betroffene Zeilen/Bloecke
-  - [ ] Patchgrund
-  - [ ] Risiken
-  - [ ] bewusste Nicht-Aenderungen
-  - [ ] konkrete Schrittliste
-- [ ] Pro Iteration nur zusammenhaengende, klein pruefbare Aenderungen umsetzen.
-- [ ] Folgeprobleme hier notieren, nicht ungeplant mitbearbeiten.
-
-- [ ] Workspace-Grundsystem zuerst zentral vorbereiten:
-  - [ ] CSS-Klassen pv-workspace, pv-panel und pv-panel-body ergaenzen.
-  - [ ] PV.Layout-Grundfunktionen in assets/provoware-core.js ergaenzen.
-  - [ ] Layoutdaten unter bestehender Store-Logik speichern.
-  - [ ] Keine Modul-HTML-Struktur umbauen, bevor Core stabil ist.
-- [ ] Danach genau ein Modul als Pilot umbauen.
-- [ ] Erst nach erfolgreichem Pilot die weiteren Module anfassen.
-
-Prioritaet 4 — Standarddaten und Laienstart
--------------------------------------------
-- [ ] daten/defaults/ anlegen.
-- [ ] Standardpakete als JSON-Dateien ergaenzen.
-- [ ] Seed-Logik mit Duplikatschutz ergaenzen.
-- [ ] start_linux.sh robust machen:
-  - [ ] Python pruefen.
-  - [ ] freien Port suchen.
-  - [ ] Browser per xdg-open oeffnen.
-  - [ ] logs/start.log schreiben.
-  - [ ] klare Fehlermeldungen ausgeben.
-- [ ] README_START_HIER.txt laiengerecht schreiben.
-
-Prioritaet 5 — Tests und Uebergabe
-----------------------------------
-- [ ] node --check fuer zentrale JavaScript-Dateien ausfuehren.
-- [ ] Registry/Manifest-Vergleich pruefen.
-- [ ] Doppelte IDs in HTML suchen.
-- [ ] Lokale Asset-Links pruefen.
-- [ ] Minimalen Playwright-Smoke-Test erst nach vorhandener App anlegen.
-- [ ] TESTPROTOKOLL_V2_3.md erstellen.
-- [ ] CHANGELOG_V2_3.md erstellen.
-- [ ] ENTWICKLER_UEBERGABE_V2_3.md erstellen.
-
-Bewusst nicht in dieser Iteration
----------------------------------
-- [ ] Keine Platzhalter-App erzeugen.
-- [ ] Kein Framework einfuehren.
-- [ ] Keine externen CDN-Abhaengigkeiten ergaenzen.
-- [ ] Keine Moduldateien raten oder kuenstlich rekonstruieren.
-- [ ] Keine Tests installieren, solange keine testbare App vorhanden ist.
-
-Naechste konkrete Iteration
----------------------------
-1. Vollstaendigen Projektstand als Archiv oder entpackten Quellordner bereitstellen.
-2. Projektstand zuerst separat ausserhalb des Zielbaums entpacken und gegen die
-   Basisstruktur pruefen.
-3. IMPORTPROTOKOLL.md direkt beim Einspielen mit Quelle und Abweichungen ausfuellen.
-4. Git-Status und Dateibaum pruefen.
-5. start_linux.sh und index.html smoke-testen, sofern vorhanden.
-6. Module und Datenmodelle erfassen.
-7. Erst danach den ersten kleinen Workspace-Core-Patch planen.
+Offen für nächste Iteration:
+- echte V2.x-Alt-Daten importieren und Migration real prüfen
+- Panel-Reihenfolge per Drag&Drop
+- Registry automatisch aus Manifest erzeugen
+- Screenreader-Test mit echter Hilfstechnologie
+- Laientest mit externer Person

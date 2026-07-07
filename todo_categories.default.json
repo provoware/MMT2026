@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "2.3.0",
+  "packId": "todo_categories",
+  "title": "ToDo-Kategorien",
+  "updatedAt": "2026-07-07",
+  "items": [
+    {
+      "id": "todo-song",
+      "name": "Song",
+      "category": "todo",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "todo-bild",
+      "name": "Bild",
+      "category": "todo",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "todo-video",
+      "name": "Video",
+      "category": "todo",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "todo-upload",
+      "name": "Upload",
+      "category": "todo",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "todo-seo",
+      "name": "SEO",
+      "category": "todo",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    },
+    {
+      "id": "todo-check",
+      "name": "Check",
+      "category": "todo",
+      "tags": [
+        "provoware"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3"
+    }
+  ]
+}

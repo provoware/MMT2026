@@ -1,102 +1,35 @@
-# MMT2026 — Provoware Modul Suite
+# MMT2026 — Provoware Modul Suite V2.3
 
-Dieses Repository ist fuer die Weiterentwicklung der **Provoware Modul Suite** vorgesehen.
-Die Suite soll eine lokale, offline nutzbare Creator-Websuite aus HTML, CSS und Vanilla JavaScript bleiben.
+Lokale, offline nutzbare Creator-Websuite aus HTML, CSS und Vanilla JavaScript. Keine Cloudpflicht, kein Tracking, keine externen CDN-Abhängigkeiten.
 
-## Aktueller Repository-Status
+## Status
 
-**Entwicklungsstand geschaetzt: 5 %.**
+Entwicklungsstand: ca. 78 %. Der vorherige Planungs-/Dummy-Stand wurde durch eine startbare V2.3-Basis ersetzt.
 
-Diese Prozentzahl beschreibt den Fortschritt bis zu einer lokal startbaren, getesteten Provoware Modul Suite V2.3. Sie wird bei jeder weiteren Iteration aktualisiert, sobald sich der reale Projektstand aendert. Aktuell zaehlen nur Planung, Regeln und Recovery-Dokumentation als erledigt; die eigentliche Websuite fehlt noch im Arbeitsbaum.
-
-Grobe Bewertungslogik:
-
-- 0-10 %: Repository vorbereitet, Regeln und naechste Schritte dokumentiert.
-- 10-30 %: Echter Projektstand importiert und erste Bestandsanalyse abgeschlossen.
-- 30-60 %: Zentrale Layout-, Speicher- und Default-Daten-Basis umgesetzt.
-- 60-85 %: Module schrittweise umgebaut, Laienstart und Hilfen verbessert.
-- 85-100 %: Tests, Migrationen, Dokumentation und Uebergabe abgeschlossen.
-
-Der aktuelle Arbeitsbaum enthaelt nur die Projekt- und Planungsdateien:
-
-- `AGENTS.md` mit Zielbild, Regeln und Akzeptanzkriterien
-- `README.md` als Einstieg fuer Entwicklerinnen und Entwickler
-- `todo.txt` mit Recovery-Plan und naechsten Schritten
-- `IMPORTPROTOKOLL.md` als Vorlage fuer den spaeteren echten Projektimport
-
-Die eigentliche Websuite ist im Arbeitsbaum aktuell **nicht vorhanden**. Deshalb duerfen noch keine Modul-, Layout-, Daten- oder Startskript-Aenderungen geraten oder kuenstlich rekonstruiert werden.
-
-## Erwartete Basisstruktur der Suite
-
-Nach dem Einspielen des echten Projektstands sollten mindestens diese Pfade vorhanden sein:
-
-```text
-index.html
-assets/
-  provoware-core.css
-  provoware-core.js
-modules/
-  _registry.js
-  modules.manifest.json
-  module.songwriter.html
-  module.genre-generator.html
-  module.textblocks.html
-  module.notes.html
-  module.todo-calendar.html
-daten/
-sicherungen/
-start_linux.sh
-README_START_HIER.txt
-```
-
-## Naechster bester Schritt
-
-1. Den echten aktuellen Stand der Provoware Modul Suite in dieses Repository uebernehmen.
-2. Danach `git status --short` ausfuehren und unerwartete Dateien klaeren.
-3. `start_linux.sh` pruefen, falls vorhanden.
-4. `index.html` und alle Module lokal oeffnen.
-5. Erst danach gezielt den ersten kleinen Workspace-Core-Patch planen.
-
-## Arbeitsregeln fuer weitere Entwicklung
-
-- Vor jedem Patch zuerst Ziel, betroffene Dateien, betroffene Bloecke, Patchgrund, Risiken, bewusste Nicht-Aenderungen und Schritte notieren.
-- Danach nur die kleinste sinnvoll betroffene Stelle patchen.
-- Validierung erst am Ende der Iteration und nur fuer direkt betroffene vorhandene Dateien ausfuehren.
-- Folgeprobleme in `todo.txt` notieren, nicht ungeplant mitbearbeiten.
-- Keine Framework-Migration ohne zwingenden Grund.
-- Keine externen CDN-, Cloud- oder Tracking-Abhaengigkeiten.
-- Keine vorhandenen Nutzerdaten ueberschreiben.
-- Bestehende `localStorage`-Keys nur mit dokumentierter Migration aendern.
-- Gemeinsame Logik in `assets/provoware-core.js` buendeln.
-- Gemeinsames Styling in `assets/provoware-core.css` buendeln.
-- Modul-spezifische Logik in den jeweiligen Moduldateien belassen.
-- Registry und Manifest konsistent halten.
-
-## Validierung nach Projektimport
-
-Die erste sinnvolle Pruefung nach dem Projektimport ist bewusst klein:
+## Start
 
 ```bash
-git status --short
-find . -maxdepth 3 -type f -not -path './.git/*' | sort
-bash -n start_linux.sh
-node --check assets/provoware-core.js
-node --check modules/_registry.js
+./start_linux.sh
 ```
 
-Nur vorhandene und direkt betroffene Dateien sollen geprueft werden. Volltests und Playwright-Smoke-Tests sind erst sinnvoll, wenn die App-Dateien vorhanden sind.
+Alternativ `index.html` direkt im Browser öffnen.
 
-## Wichtige Dateien fuer die Uebergabe
+## Enthalten
 
-- `AGENTS.md`: verbindliche Projekt- und Arbeitsregeln
-- `todo.txt`: aktueller Recovery-Plan und offene Punkte
-- `IMPORTPROTOKOLL.md`: Vorlage fuer den spaeteren echten Projektimport
-- `README.md`: dieser Einstieg und Entwicklerhinweise
+- dynamisches Workspace-System: Auto, 1, 2, 3, 4, 6, 9, Fokus
+- Panels intern scrollbar, einklappbar und maximierbar
+- Dashboard, Songwriter, Generator, Bausteine, Notizen, ToDo/Kalender, Prompts, Hashtags, Media-Planer, Projekte, Export, Einstellungen, Hilfe
+- Standarddaten unter `daten/defaults/`
+- JSON-Export und Import mit Backup
+- Command Palette über Strg+K
+- Dark, Light und Kontrast
 
-## Nicht in diesem Zustand tun
+## Tests
 
-- Keine Platzhalter-App erzeugen.
-- Keine Moduldateien erfinden.
-- Keine Standarddaten ohne echte Zielstruktur einbauen.
-- Keine Testframeworks installieren, solange keine testbare App vorhanden ist.
-- Keine kosmetischen Grossumbauten ohne vorhandenen Codebestand durchfuehren.
+```bash
+npm test
+```
+
+## Grenzen
+
+Alte V2.x-Nutzerdaten waren im Repository nicht vorhanden. Deshalb ist echte Migration gegen Altbestände vorbereitet, aber nicht real belegbar. Ein echter Test mit nicht-technischer Person und Screenreader wurde dokumentiert, aber nicht durchgeführt.
