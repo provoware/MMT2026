@@ -1,5 +1,19 @@
 {
-  "status": "dummy",
-  "note": "Diese Datei ist noch unfertig und enthält noch keine fertigen Daten.",
-  "items": []
+  "schemaVersion": "2.3.0",
+  "packId": "hashtags",
+  "title": "Hashtags",
+  "updatedAt": "2026-07-07",
+  "items": [
+    {
+      "id": "hash-music",
+      "name": "Musik Standard",
+      "category": "Musik",
+      "tags": [
+        "youtube"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3",
+      "text": "#provoware #pppoppi #hardtechno #suno #satire"
+    }
+  ]
 }

@@ -1196,3 +1196,30 @@ Empfehlungen:
 - ...
 - ...
 ```
+
+---
+
+## 24. Entwicklungsstand nach Dateiordnungs-Iteration 2026-07-07
+
+Diese Projektstruktur ist jetzt als aktiver Standard zu behandeln:
+
+- Laufzeit-Assets liegen ausschließlich unter `assets/`.
+- Moduldateien, Registry und Manifest liegen ausschließlich unter `modules/`.
+- Standarddaten liegen unter `daten/defaults/`; Root-Duplikate gelten als falsch abgelegt.
+- `index.html` bleibt der zentrale Einstieg und verweist nur auf `assets/provoware-core.css`, `assets/provoware-core.js` und `modules/_registry.js`.
+
+### Globaler Code- und Sparsamkeitsstandard
+
+- Erst prüfen, ob eine Datei im richtigen Zielordner liegt; keine neuen Parallelkopien im Projektroot anlegen.
+- Gemeinsame UI-, Speicher-, Feedback- und Layoutlogik gehört in `assets/provoware-core.js`.
+- Gemeinsame Farben, Kontraste, Fokuszustände und Feedback-Stile gehören in `assets/provoware-core.css`.
+- Moduldateien dürfen nur modulnahe Inhalte enthalten; projektweite Helfer nicht in einzelne Module kopieren.
+- Kleine, gezielte Patches bevorzugen: keine globalen Umformatierungen und keine kosmetischen Änderungen ohne Nutzwert.
+- Nutzerfeedback muss klar sagen, was passiert ist, wo Daten bleiben und was der nächste sichere Schritt ist.
+- Kontraständerungen müssen Dark, Light und Kontrastmodus berücksichtigen.
+
+### Sichtbarer Nutzen dieser Iteration
+
+- Die App nutzt wieder echte Assets und Module statt Dummy-Dateien in den Zielordnern.
+- Statusmeldungen erklären Speicher-, Kopier- und Exportaktionen verständlicher.
+- Light-/Kontrastmodus erhalten zusätzliche Lesbarkeitsregeln für Eingaben, Vorschau, Chips und Statusmeldungen.
