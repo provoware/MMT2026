@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Provoware Modul Suite Dummy
+Comment=Dummy-Datei: Dieser Starter ist noch unfertig.
+Exec=./start_linux.sh
+Terminal=true
