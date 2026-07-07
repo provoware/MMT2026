@@ -5,6 +5,18 @@ Die Suite soll eine lokale, offline nutzbare Creator-Websuite aus HTML, CSS und 
 
 ## Aktueller Repository-Status
 
+**Entwicklungsstand geschaetzt: 5 %.**
+
+Diese Prozentzahl beschreibt den Fortschritt bis zu einer lokal startbaren, getesteten Provoware Modul Suite V2.3. Sie wird bei jeder weiteren Iteration aktualisiert, sobald sich der reale Projektstand aendert. Aktuell zaehlen nur Planung, Regeln und Recovery-Dokumentation als erledigt; die eigentliche Websuite fehlt noch im Arbeitsbaum.
+
+Grobe Bewertungslogik:
+
+- 0-10 %: Repository vorbereitet, Regeln und naechste Schritte dokumentiert.
+- 10-30 %: Echter Projektstand importiert und erste Bestandsanalyse abgeschlossen.
+- 30-60 %: Zentrale Layout-, Speicher- und Default-Daten-Basis umgesetzt.
+- 60-85 %: Module schrittweise umgebaut, Laienstart und Hilfen verbessert.
+- 85-100 %: Tests, Migrationen, Dokumentation und Uebergabe abgeschlossen.
+
 Der aktuelle Arbeitsbaum enthaelt nur die Projekt- und Planungsdateien:
 
 - `AGENTS.md` mit Zielbild, Regeln und Akzeptanzkriterien
