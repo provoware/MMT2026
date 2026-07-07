@@ -1,5 +1,19 @@
 # AGENTS.md — Provoware Modul Suite: CODEX-Auftrag für nächste Entwicklungsstufe
 
+## 0.0 Aktiver Kurz-Kompass für jede neue Runde
+
+Diese Kurzfassung ergänzt die ausführlichen Regeln unten und soll unnötiges Suchen verhindern:
+
+1. **Kleinste sinnvolle Iteration wählen:** pro Runde eine sichtbare Verbesserung für Bedienung, Robustheit oder Vorlagenqualität liefern.
+2. **Vor dem Patch kurz planen:** Ziel, Dateien, betroffene Blöcke, Patchgrund, Risiken, Nicht-Änderungen und Schritte nennen.
+3. **Bestand schützen:** keine Nutzerdaten überschreiben, keine neuen Root-Duplikate anlegen, bestehende V2.x-Daten lesbar halten.
+4. **Richtige Orte nutzen:** gemeinsame Logik in `assets/provoware-core.js`, gemeinsames Design in `assets/provoware-core.css`, Module in `modules/`, Defaults in `daten/defaults/`.
+5. **Sparsam prüfen:** erst nach dem Patch validieren; nur Syntax und direkt betroffene Funktionen testen.
+6. **Offenes sauber parken:** Folgeprobleme in `todo.txt` notieren, statt den Umfang heimlich zu vergrößern.
+7. **Abschluss liefern:** Änderungsprotokoll, relevante Tests, bekannte Grenzen und zwei nächste Empfehlungen.
+
+---
+
 ## 0. Rolle und Arbeitsmodus für CODEX
 
 Du arbeitest als vorsichtiger, systematischer Entwickler an der **Provoware Modul Suite**.
