@@ -18,6 +18,8 @@ dass Herkunft, fehlende Dateien oder Risiken beim Import verloren gehen.
 - [ ] Es wurden keine vorhandenen Nutzer- oder Beispieldaten umbenannt.
 - [ ] Es wurden keine vorhandenen Nutzer- oder Beispieldaten bereinigt.
 - [ ] Falls bereits App-Dateien vorhanden waren: Backup-Ordner wurde angelegt.
+- [ ] Import wurde zuerst in einem separaten Ordner entpackt und grob geprueft.
+- [ ] Es wurden keine versteckten Cloud-, CDN- oder Tracking-Abhaengigkeiten uebernommen.
 
 ## 3. Erwartete Basisdateien nach dem Import
 
@@ -36,13 +38,22 @@ dass Herkunft, fehlende Dateien oder Risiken beim Import verloren gehen.
 - [ ] `start_linux.sh`
 - [ ] `README_START_HIER.txt`
 
-## 4. Abweichungen oder fehlende Dateien
+## 4. Minimaler Importablauf
+
+1. Archiv oder Quellordner ausserhalb des Repositories entpacken.
+2. Enthaltene Dateien grob mit der erwarteten Basisstruktur vergleichen.
+3. Dateien erst danach in dieses Repository kopieren.
+4. `IMPORTPROTOKOLL.md` sofort mit Quelle, Datum und Abweichungen ausfuellen.
+5. Keine Daten bereinigen, umbenennen oder verschieben, bevor die App einmal geprueft wurde.
+6. Nach dem Kopieren `git status --short` ausfuehren und unerwartete Pfade hier notieren.
+
+## 5. Abweichungen oder fehlende Dateien
 
 | Pfad | Befund | Entscheidung |
 | --- | --- | --- |
 |  |  |  |
 
-## 5. Erste Pruefungen nach dem Import
+## 6. Erste Pruefungen nach dem Import
 
 Nur vorhandene Dateien pruefen. Fehlende Dateien nicht durch Platzhalter ersetzen.
 
@@ -54,7 +65,7 @@ node --check assets/provoware-core.js
 node --check modules/_registry.js
 ```
 
-## 6. Offene Risiken nach dem Import
+## 7. Offene Risiken nach dem Import
 
 - [ ] localStorage-Keys muessen noch erfasst werden.
 - [ ] V2.x-Datenmodelle muessen noch dokumentiert werden.
@@ -62,7 +73,7 @@ node --check modules/_registry.js
 - [ ] Standarddaten duerfen vorhandene Nutzerdaten nicht ueberschreiben.
 - [ ] Registry und Manifest muessen noch verglichen werden.
 
-## 7. Naechste geplante Klein-Iteration
+## 8. Naechste geplante Klein-Iteration
 
 - Ziel:
 - Betroffene Dateien:

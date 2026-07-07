@@ -9,7 +9,7 @@ Repository spekulativ Code erzeugt wird.
 
 Aktueller Befund
 ----------------
-- Das Repository enthaelt aktuell nur AGENTS.md, README.md und todo.txt.
+- Das Repository enthaelt aktuell AGENTS.md, README.md, todo.txt und IMPORTPROTOKOLL.md.
 - Die eigentliche Websuite ist im Arbeitsbaum nicht vorhanden.
 - Ohne index.html, assets/, modules/, daten/ und start_linux.sh kann keine
   fachlich sichere Modul-, Layout-, Start- oder Datenanalyse erfolgen.
@@ -24,6 +24,8 @@ Aktueller Befund
 Prioritaet 0 — Projektstand vervollstaendigen
 ---------------------------------------------
 - [ ] Echten Projektstand in dieses Repository uebernehmen.
+- [ ] Projektstand vor dem Kopieren separat entpacken und grob mit der erwarteten
+  Basisstruktur vergleichen.
 - [ ] Import-Protokoll direkt beim Einspielen in `IMPORTPROTOKOLL.md` ausfuellen:
   - Quelle/Archivname des eingespielten Projektstands notieren.
   - Datum und Uhrzeit des Imports notieren.
@@ -123,8 +125,9 @@ Bewusst nicht in dieser Iteration
 Naechste konkrete Iteration
 ---------------------------
 1. Vollstaendigen Projektstand bereitstellen oder einchecken.
-2. IMPORTPROTOKOLL.md direkt beim Einspielen ausfuellen.
-3. Git-Status und Dateibaum pruefen.
-4. start_linux.sh und index.html smoke-testen, sofern vorhanden.
-5. Module und Datenmodelle erfassen.
-6. Erst danach den ersten kleinen Workspace-Core-Patch planen.
+2. Projektstand zuerst separat entpacken und gegen die Basisstruktur pruefen.
+3. IMPORTPROTOKOLL.md direkt beim Einspielen ausfuellen.
+4. Git-Status und Dateibaum pruefen.
+5. start_linux.sh und index.html smoke-testen, sofern vorhanden.
+6. Module und Datenmodelle erfassen.
+7. Erst danach den ersten kleinen Workspace-Core-Patch planen.
