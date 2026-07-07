@@ -6,11 +6,11 @@ dass Herkunft, fehlende Dateien oder Risiken beim Import verloren gehen.
 
 ## 1. Importquelle
 
-- Quelle / Archivname:
-- Erhalten von:
-- Importiert am:
-- Importiert durch:
-- Bemerkungen zur Quelle:
+- Quelle / Archivname: keine Importquelle im Arbeitsbaum gefunden
+- Erhalten von: offen
+- Importiert am: noch nicht importiert; Pruefversuch am 2026-07-07 02:13 UTC
+- Importiert durch: Codex
+- Bemerkungen zur Quelle: Im Repository liegt kein Archiv und kein entpackter Projektstand vor. Deshalb wurde nichts in die App-Struktur kopiert und keine Platzhalter-App erzeugt.
 
 ## 2. Vor dem Import geprueft
 
@@ -51,7 +51,21 @@ dass Herkunft, fehlende Dateien oder Risiken beim Import verloren gehen.
 
 | Pfad | Befund | Entscheidung |
 | --- | --- | --- |
-|  |  |  |
+| Importarchiv | kein `.zip`, `.tar`, `.tar.gz`, `.tgz`, `.7z` oder `.rar` bis Tiefe 3 gefunden | Echten Projektstand separat bereitstellen, dann ausserhalb des Zielbaums entpacken |
+| `index.html` | fehlt | nicht raten; echten Projektstand importieren |
+| `assets/provoware-core.css` | fehlt | nicht raten; echten Projektstand importieren |
+| `assets/provoware-core.js` | fehlt | nicht raten; echten Projektstand importieren |
+| `modules/_registry.js` | fehlt | nicht raten; echten Projektstand importieren |
+| `modules/modules.manifest.json` | fehlt | nicht raten; echten Projektstand importieren |
+| `modules/module.songwriter.html` | fehlt | nicht raten; echten Projektstand importieren |
+| `modules/module.genre-generator.html` | fehlt | nicht raten; echten Projektstand importieren |
+| `modules/module.textblocks.html` | fehlt | nicht raten; echten Projektstand importieren |
+| `modules/module.notes.html` | fehlt | nicht raten; echten Projektstand importieren |
+| `modules/module.todo-calendar.html` | fehlt | nicht raten; echten Projektstand importieren |
+| `daten/` | fehlt | nicht raten; echten Projektstand importieren |
+| `sicherungen/` | fehlt | nicht raten; echten Projektstand importieren |
+| `start_linux.sh` | fehlt | nicht raten; echten Projektstand importieren |
+| `README_START_HIER.txt` | fehlt | nicht raten; echten Projektstand importieren |
 
 ## 6. Erste Pruefungen nach dem Import
 
@@ -75,8 +89,8 @@ node --check modules/_registry.js
 
 ## 8. Naechste geplante Klein-Iteration
 
-- Ziel:
-- Betroffene Dateien:
-- Patchgrund:
-- Risiken:
-- Bewusste Nicht-Aenderungen:
+- Ziel: Echten Projektstand oder Archiv bereitstellen und zuerst separat entpacken.
+- Betroffene Dateien: zunaechst nur Importquelle ausserhalb des Repositories, danach echte App-Dateien.
+- Patchgrund: Ohne Basisdateien kann keine stabile Websuite-Analyse oder Umsetzung erfolgen.
+- Risiken: Falsche oder unvollstaendige Quelle koennte Nutzerdaten verdecken; deshalb zuerst separat pruefen.
+- Bewusste Nicht-Aenderungen: Keine Platzhalter-App, keine geratenen Module, keine Testframework-Installation.
