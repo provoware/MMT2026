@@ -85,6 +85,7 @@ Nur vorhandene und direkt betroffene Dateien sollen geprueft werden. Volltests u
 
 - `AGENTS.md`: verbindliche Projekt- und Arbeitsregeln
 - `todo.txt`: aktueller Recovery-Plan und offene Punkte
+- `IMPORTPROTOKOLL.md`: Vorlage fuer den spaeteren echten Projektimport
 - `README.md`: dieser Einstieg und Entwicklerhinweise
 
 ## Nicht in diesem Zustand tun

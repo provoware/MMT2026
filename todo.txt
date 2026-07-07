@@ -20,7 +20,7 @@ Aktueller Befund
 Prioritaet 0 — Projektstand vervollstaendigen
 ---------------------------------------------
 - [ ] Echten Projektstand in dieses Repository uebernehmen.
-- [ ] Import-Protokoll direkt beim Einspielen ausfuellen:
+- [ ] Import-Protokoll direkt beim Einspielen in `IMPORTPROTOKOLL.md` ausfuellen:
   - Quelle/Archivname des eingespielten Projektstands notieren.
   - Datum und Uhrzeit des Imports notieren.
   - Abweichende oder fehlende Dateien sofort als offene Punkte eintragen.
