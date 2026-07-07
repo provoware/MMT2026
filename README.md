@@ -22,6 +22,7 @@ Der aktuelle Arbeitsbaum enthaelt nur die Projekt- und Planungsdateien:
 - `AGENTS.md` mit Zielbild, Regeln und Akzeptanzkriterien
 - `README.md` als Einstieg fuer Entwicklerinnen und Entwickler
 - `todo.txt` mit Recovery-Plan und naechsten Schritten
+- `IMPORTPROTOKOLL.md` als Vorlage fuer den spaeteren echten Projektimport
 
 Die eigentliche Websuite ist im Arbeitsbaum aktuell **nicht vorhanden**. Deshalb duerfen noch keine Modul-, Layout-, Daten- oder Startskript-Aenderungen geraten oder kuenstlich rekonstruiert werden.
 
@@ -58,6 +59,10 @@ README_START_HIER.txt
 
 ## Arbeitsregeln fuer weitere Entwicklung
 
+- Vor jedem Patch zuerst Ziel, betroffene Dateien, betroffene Bloecke, Patchgrund, Risiken, bewusste Nicht-Aenderungen und Schritte notieren.
+- Danach nur die kleinste sinnvoll betroffene Stelle patchen.
+- Validierung erst am Ende der Iteration und nur fuer direkt betroffene vorhandene Dateien ausfuehren.
+- Folgeprobleme in `todo.txt` notieren, nicht ungeplant mitbearbeiten.
 - Keine Framework-Migration ohne zwingenden Grund.
 - Keine externen CDN-, Cloud- oder Tracking-Abhaengigkeiten.
 - Keine vorhandenen Nutzerdaten ueberschreiben.
