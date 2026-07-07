@@ -8,8 +8,8 @@ Datum: 2026-07-07
 bash -n start_linux.sh
 node --check assets/provoware-core.js
 node --check modules/_registry.js
-node tests/static-smoke.mjs
-node tests/browser-smoke.mjs
+node static-smoke.mjs
+node browser-smoke.mjs
 npm test
 timeout 4s ./start_linux.sh
 ```
@@ -30,3 +30,12 @@ Browser können localStorage in blockierten Kontexten verweigern. Dafür wurde e
 - alte V2.x-Datenmigration, weil keine Alt-Daten im Repository vorhanden waren
 - Test durch nicht-technische Person
 - echter Screenreader-Test mit Hilfstechnologie
+
+## Nachtest Panel-Reihenfolge
+
+```bash
+node --check assets/provoware-core.js
+npm test
+```
+
+Ergebnis: Syntax und bestehende Smoke-Checks erfolgreich. Manuell im Code geprüft: Layoutdaten mit alten Einträgen ohne `order` bleiben durch Fallback lesbar.

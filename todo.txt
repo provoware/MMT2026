@@ -11,7 +11,7 @@ Erledigt:
 
 Offen für nächste Iteration:
 - echte V2.x-Alt-Daten importieren und Migration real prüfen
-- Panel-Reihenfolge per Drag&Drop
+- Panel-Reihenfolge per ↑/↓ ist umgesetzt; echtes Drag&Drop bleibt offen
 - Registry automatisch aus Manifest erzeugen
 - Screenreader-Test mit echter Hilfstechnologie
 - Laientest mit externer Person
