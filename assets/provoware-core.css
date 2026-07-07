@@ -14,3 +14,24 @@ body.light .status.err{color:#a51224}
 .field-hint,small{color:var(--muted);line-height:1.35}
 body.contrast .status,body.contrast .card,body.contrast .item,body.contrast input,body.contrast select,body.contrast textarea{border-color:#fff}
 body.contrast button.primary{background:#00ffff;color:#000;border:2px solid #fff}
+
+/* Layout-Iteration: weniger Seitenscrollen durch kompaktere Chrome und interne Scrollbereiche. */
+@media (min-width:1051px){
+  body{overflow:hidden}
+  .top{min-height:var(--top);padding:7px 12px}
+  .top button,.top select{min-height:32px;padding:5px 9px}
+  .brand{min-width:170px}
+  .brand span{display:block;font-size:.86rem}
+  .side{min-height:0;padding:8px;display:flex;flex-direction:column;gap:8px}
+  .nav{min-height:0;overflow:auto;gap:5px;padding-right:2px}
+  .nav button{min-height:32px;padding:6px 8px;border-radius:10px;grid-template-columns:22px 1fr}
+  .side>.muted{margin:0;font-size:.86rem}
+  .main{display:flex;flex-direction:column;gap:8px;padding:8px}
+  .head{flex:0 0 auto;margin:0;padding:8px 10px}
+  .head h1{font-size:var(--head)}
+  .workspace{flex:1;height:auto;overflow:auto;align-content:stretch;padding-right:2px}
+  .workspace[data-grid='9'],.workspace[data-grid='6'],.workspace[data-grid='4']{overflow:hidden}
+  .workspace[data-grid=auto]{grid-auto-rows:minmax(190px,1fr)}
+  .phead{position:sticky;top:0;z-index:2;padding:7px 9px}
+  .body{padding:10px}
+}
