@@ -1,0 +1,106 @@
+Provoware Modul Suite — TODO fuer naechste Iteration
+Stand: 2026-07-07
+
+Ziel dieser Datei
+-----------------
+Diese Datei haelt den aktuellen Befund und die naechsten Schritte fest.
+Sie ersetzt keine Umsetzung. Sie verhindert, dass auf einem unvollstaendigen
+Repository spekulativ Code erzeugt wird.
+
+Aktueller Befund
+----------------
+- Das Repository enthaelt aktuell nur AGENTS.md und README.md.
+- Die eigentliche Websuite ist im Arbeitsbaum nicht vorhanden.
+- Ohne index.html, assets/, modules/, daten/ und start_linux.sh kann keine
+  fachlich sichere Modul-, Layout-, Start- oder Datenanalyse erfolgen.
+- README.md enthaelt derzeit nur den Projektnamen.
+
+Prioritaet 0 — Projektstand vervollstaendigen
+---------------------------------------------
+- [ ] Echten Projektstand in dieses Repository uebernehmen.
+- [ ] Erwartete Basisdateien pruefen:
+  - [ ] index.html
+  - [ ] assets/provoware-core.css
+  - [ ] assets/provoware-core.js
+  - [ ] modules/_registry.js
+  - [ ] modules/modules.manifest.json
+  - [ ] modules/module.songwriter.html
+  - [ ] modules/module.genre-generator.html
+  - [ ] modules/module.textblocks.html
+  - [ ] modules/module.notes.html
+  - [ ] modules/module.todo-calendar.html
+  - [ ] daten/
+  - [ ] sicherungen/
+  - [ ] start_linux.sh
+  - [ ] README_START_HIER.txt
+- [ ] Nach dem Import Git-Status pruefen und unerwartete Dateien markieren.
+
+Prioritaet 1 — Schutz vor unbeabsichtigten Datenverlusten
+---------------------------------------------------------
+- [ ] Vor Umbauten Backup-Ordner anlegen, z. B. backup_before_v2_3/.
+- [ ] Bestehende localStorage-Keys erfassen.
+- [ ] Bestehende V2.x-Datenmodelle dokumentieren.
+- [ ] Migrationsbedarf notieren, bevor Keys oder Datenformen geaendert werden.
+- [ ] Sicherstellen, dass Standarddaten keine Nutzerdaten ueberschreiben.
+
+Prioritaet 2 — Analyse nach vollstaendigem Projektimport
+--------------------------------------------------------
+- [ ] index.html im Browser oeffnen.
+- [ ] start_linux.sh ausfuehren und Verhalten notieren.
+- [ ] Alle vorhandenen Module oeffnen.
+- [ ] CSS-Layout in assets/provoware-core.css gezielt pruefen.
+- [ ] Gemeinsame Funktionen in assets/provoware-core.js erfassen.
+- [ ] Registry und Manifest vergleichen.
+- [ ] Vorhandene Import-/Export-Funktionen erfassen.
+- [ ] Vorhandene Hilfen, Tooltips und Starttexte erfassen.
+- [ ] Bestehende Tests und Testkonfiguration suchen.
+
+Prioritaet 3 — Kleinster sinnvoller Umsetzungsschritt
+-----------------------------------------------------
+- [ ] Workspace-Grundsystem zuerst zentral vorbereiten:
+  - [ ] CSS-Klassen pv-workspace, pv-panel und pv-panel-body ergaenzen.
+  - [ ] PV.Layout-Grundfunktionen in assets/provoware-core.js ergaenzen.
+  - [ ] Layoutdaten unter bestehender Store-Logik speichern.
+  - [ ] Keine Modul-HTML-Struktur umbauen, bevor Core stabil ist.
+- [ ] Danach genau ein Modul als Pilot umbauen.
+- [ ] Erst nach erfolgreichem Pilot die weiteren Module anfassen.
+
+Prioritaet 4 — Standarddaten und Laienstart
+-------------------------------------------
+- [ ] daten/defaults/ anlegen.
+- [ ] Standardpakete als JSON-Dateien ergaenzen.
+- [ ] Seed-Logik mit Duplikatschutz ergaenzen.
+- [ ] start_linux.sh robust machen:
+  - [ ] Python pruefen.
+  - [ ] freien Port suchen.
+  - [ ] Browser per xdg-open oeffnen.
+  - [ ] logs/start.log schreiben.
+  - [ ] klare Fehlermeldungen ausgeben.
+- [ ] README_START_HIER.txt laiengerecht schreiben.
+
+Prioritaet 5 — Tests und Uebergabe
+----------------------------------
+- [ ] node --check fuer zentrale JavaScript-Dateien ausfuehren.
+- [ ] Registry/Manifest-Vergleich pruefen.
+- [ ] Doppelte IDs in HTML suchen.
+- [ ] Lokale Asset-Links pruefen.
+- [ ] Minimalen Playwright-Smoke-Test erst nach vorhandener App anlegen.
+- [ ] TESTPROTOKOLL_V2_3.md erstellen.
+- [ ] CHANGELOG_V2_3.md erstellen.
+- [ ] ENTWICKLER_UEBERGABE_V2_3.md erstellen.
+
+Bewusst nicht in dieser Iteration
+---------------------------------
+- [ ] Keine Platzhalter-App erzeugen.
+- [ ] Kein Framework einfuehren.
+- [ ] Keine externen CDN-Abhaengigkeiten ergaenzen.
+- [ ] Keine Moduldateien raten oder kuenstlich rekonstruieren.
+- [ ] Keine Tests installieren, solange keine testbare App vorhanden ist.
+
+Naechste konkrete Iteration
+---------------------------
+1. Vollstaendigen Projektstand bereitstellen oder einchecken.
+2. Git-Status und Dateibaum pruefen.
+3. start_linux.sh und index.html smoke-testen.
+4. Module und Datenmodelle erfassen.
+5. Erst danach den ersten kleinen Workspace-Core-Patch planen.
