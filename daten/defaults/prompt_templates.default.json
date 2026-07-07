@@ -1,5 +1,30 @@
 {
-  "status": "dummy",
-  "note": "Diese Datei ist noch unfertig und enthält noch keine fertigen Daten.",
-  "items": []
+  "schemaVersion": "2.3.0",
+  "packId": "prompt_templates",
+  "title": "Promptvorlagen",
+  "updatedAt": "2026-07-07",
+  "items": [
+    {
+      "id": "prompt-song",
+      "name": "Songtext verbessern",
+      "category": "Songwriting",
+      "tags": [
+        "suno"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3",
+      "text": "Analysiere Sinn, Reimform, Flow und Suno-Tauglichkeit. Verbessere professionell."
+    },
+    {
+      "id": "prompt-seo",
+      "name": "YouTube SEO",
+      "category": "SEO",
+      "tags": [
+        "youtube"
+      ],
+      "source": "default",
+      "version": "2026-07-v2.3",
+      "text": "Erstelle Titel, Beschreibung, Hashtags und Suchtags."
+    }
+  ]
 }
