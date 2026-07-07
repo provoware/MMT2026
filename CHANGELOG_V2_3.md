@@ -9,3 +9,5 @@
 - Tests: bash -n, node --check, statischer Smoke-Test, Browser-Runtime-Smoke-Test.
 - Panel-Reihenfolge kann jetzt je Modul mit ↑/↓ angepasst und lokal gespeichert werden; das hilft, wichtige Arbeitsbereiche ohne langes Scrollen nach vorne zu holen.
 - Standardpakete können auf der Startseite erneut ergänzt werden; dabei werden nur fehlende Vorlagen hinzugefügt und eigene Daten nicht überschrieben.
+- README für den Laienstart erweitert: Startwege, Datenort, Sicherung, Fehlerhilfe und Entwicklerprüfungen sind jetzt klarer getrennt.
+- Startskript meldet Browseradresse, Fallback und Datensicherungs-Hinweis verständlicher.
