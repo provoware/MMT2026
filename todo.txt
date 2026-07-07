@@ -9,11 +9,13 @@ Repository spekulativ Code erzeugt wird.
 
 Aktueller Befund
 ----------------
-- Das Repository enthaelt aktuell nur AGENTS.md und README.md.
+- Das Repository enthaelt aktuell nur AGENTS.md, README.md und todo.txt.
 - Die eigentliche Websuite ist im Arbeitsbaum nicht vorhanden.
 - Ohne index.html, assets/, modules/, daten/ und start_linux.sh kann keine
   fachlich sichere Modul-, Layout-, Start- oder Datenanalyse erfolgen.
-- README.md enthaelt derzeit nur den Projektnamen.
+- README.md dokumentiert den aktuellen Entwicklungsstand jetzt als grobe
+  Prozentzahl. Diese Zahl muss bei jeder weiteren Iteration aktualisiert
+  werden, sobald sich der reale Projektstand aendert.
 
 Prioritaet 0 — Projektstand vervollstaendigen
 ---------------------------------------------
