@@ -39,3 +39,11 @@ npm test
 ```
 
 Ergebnis: Syntax und bestehende Smoke-Checks erfolgreich. Manuell im Code geprüft: Layoutdaten mit alten Einträgen ohne `order` bleiben durch Fallback lesbar.
+
+## Nachtest Layout-Hinweis und Grid-Fallback
+
+```bash
+node --check assets/provoware-core.js
+```
+
+Ergebnis: Syntaxcheck und bestehende Smoke-Checks erfolgreich. npm meldete nur einen vorhandenen Hinweis zur http-proxy-Umgebungsvariable.

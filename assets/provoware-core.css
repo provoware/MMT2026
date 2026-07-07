@@ -35,3 +35,8 @@ body.contrast button.primary{background:#00ffff;color:#000;border:2px solid #fff
   .phead{position:sticky;top:0;z-index:2;padding:7px 9px}
   .body{padding:10px}
 }
+
+/* Layout-Hilfe: verständliche Auswahl ohne zusätzliche Seitenscrollfläche. */
+.tools label.compact{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.layout-help{align-self:center;max-width:220px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

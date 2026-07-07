@@ -11,3 +11,5 @@
 - Standardpakete können auf der Startseite erneut ergänzt werden; dabei werden nur fehlende Vorlagen hinzugefügt und eigene Daten nicht überschrieben.
 - README für den Laienstart erweitert: Startwege, Datenort, Sicherung, Fehlerhilfe und Entwicklerprüfungen sind jetzt klarer getrennt.
 - Startskript meldet Browseradresse, Fallback und Datensicherungs-Hinweis verständlicher.
+- Layout-Auswahl laienfreundlicher beschriftet und mit kurzem Sicherheitshinweis ergänzt: Der Reset betrifft nur die Ansicht, nicht die gespeicherten Inhalte.
+- Layoutspeicherung robuster gemacht: ungültige gespeicherte Grid-Werte fallen auf `auto` zurück.
