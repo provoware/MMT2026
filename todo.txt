@@ -20,6 +20,12 @@ Aktueller Befund
 Prioritaet 0 — Projektstand vervollstaendigen
 ---------------------------------------------
 - [ ] Echten Projektstand in dieses Repository uebernehmen.
+- [ ] Import-Protokoll direkt beim Einspielen ausfuellen:
+  - Quelle/Archivname des eingespielten Projektstands notieren.
+  - Datum und Uhrzeit des Imports notieren.
+  - Abweichende oder fehlende Dateien sofort als offene Punkte eintragen.
+  - Vorhandene Nutzer- oder Beispieldaten nicht umbenennen, nicht verschieben
+    und nicht bereinigen, bevor sie analysiert wurden.
 - [ ] Erwartete Basisdateien pruefen:
   - [ ] index.html
   - [ ] assets/provoware-core.css
