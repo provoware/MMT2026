@@ -1,0 +1,26 @@
+name: Projekt-Smoke-Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  project-smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - name: Projekt holen
+        uses: actions/checkout@v4
+      - name: Node.js vorbereiten
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Vorhandene Tests ausführen
+        run: npm test
