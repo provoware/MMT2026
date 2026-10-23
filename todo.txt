@@ -17,3 +17,8 @@ Offen für nächste Iteration:
 - Screenreader-Test mit echter Hilfstechnologie
 - Laientest mit externer Person
 - README später um Screenshots oder kurze Bildanleitung ergänzen, sobald eine visuelle Startprüfung eingeplant ist.
+
+Import-Sicherheitsiteration 2026-10-24:
+- Umgesetzt auf Entwicklungszweig: Sicherung vor Import, Rücksetzung bei Schreibfehler, Wiederherstellungsaktion, Regressionstests.
+- Offen: Browser-Speicher bei Stromausfall; normale Speicherfehler sichtbar melden; echten Browser- und Skalierungstest ergänzen.
+- Verbindliche Pflichten/Nachweise: docs/RELEASE_PFLICHTMATRIX.md
