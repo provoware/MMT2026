@@ -42,22 +42,26 @@ const Exporter={
   return {schemaVersion:'2.3.0',exportedAt:new Date().toISOString(),store:data};
  },
  save(){download('provoware-mmt2026-export.json',this.all())},
- importText(t){
+ importText(t,replace=false){
   const o=JSON.parse(t);
   if(!o||!o.store||typeof o.store!=='object'||Array.isArray(o.store))
    throw Error('Ungültiger Export: Speicherbereich nicht erkannt');
-  const entries=Object.entries(o.store);
-  if(!entries.length||entries.some(([k])=>!k.startsWith(P)||k.length===P.length||k===P+'probe'||k===P+'backup.beforeImport'))
+  const raw=Object.entries(o.store);
+  if(!raw.length||raw.some(([k])=>!k.startsWith(P)||k.length===P.length))
    throw Error('Ungültiger Export: unzulässiger oder leerer Speicherbereich');
+  // Ältere Exporte können interne Sicherungsschlüssel enthalten; niemals übernehmen.
+  const entries=raw.filter(([k])=>k!==P+'probe'&&k!==P+'backup.beforeImport');
+  if(!entries.length)throw Error('Ungültiger Export: keine Nutzdaten enthalten');
   const s=storage();
   if(!s)throw Error('Import nicht möglich: Browser-Speicher nicht verfügbar.');
-  const changes=entries.map(([k,v])=>[k,JSON.stringify(v)]);
+  const remove=replace?Object.keys(this.all().store).filter(k=>!entries.some(([key])=>key===k)):[];
+  const changes=[...entries.map(([key,v])=>({key,value:JSON.stringify(v),remove:false})),...remove.map(key=>({key,remove:true}))];
   const backupKey=P+'backup.beforeImport';
-  const before=new Map(entries.map(([k])=>[k,s.getItem(k)]));
+  const before=new Map(changes.map(({key})=>[key,s.getItem(key)]));
   const previousBackup=s.getItem(backupKey);
   try{s.setItem(backupKey,JSON.stringify(this.all()))}
   catch(e){throw Error('Import abgebrochen: Sicherung konnte nicht gespeichert werden.')}
-  try{for(const [k,v] of changes)s.setItem(k,v)}
+  try{for(const c of changes)c.remove?s.removeItem(c.key):s.setItem(c.key,c.value)}
   catch(e){
    let restored=true;
    for(const [k,old] of before){
@@ -77,7 +81,7 @@ const Exporter={
   if(!s)throw Error('Browser-Speicher nicht verfügbar.');
   const backup=s.getItem(P+'backup.beforeImport');
   if(!backup)throw Error('Keine Import-Sicherung vorhanden.');
-  return this.importText(backup);
+  return this.importText(backup,true);
  }
 };
 function simpleModule(cfg){return {id:cfg.id,title:cfg.title,icon:cfg.icon||'▣',purpose:cfg.purpose||'',grid:cfg.grid||'9',panels(){return cfg.panels.map(x=>typeof x==='function'?x():x)}}}
