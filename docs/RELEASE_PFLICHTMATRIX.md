@@ -1,6 +1,6 @@
 # Release-Pflichtmatrix – MMT2026
 
-Stand: 2026-10-24 (Arbeitszweig `codex/mmt2026-safe-import-20261024`). Grundlage: `main` bei `f32edbd7420203dbe21607e7b8b7625c2c8554d6`.
+Stand: 2026-10-24. PR: https://github.com/provoware/MMT2026/pull/26 (Entwurf). Entwicklungszweig: `codex/mmt2026-safe-import-20261024`. Zuletzt geprüfter PR-Head: `8abe7c24edb2bb90e0b9679dff5a8323da42fec4`; Grundlage: `main` bei `f32edbd7420203dbe21607e7b8b7625c2c8554d6`. Aktuellen Head stets über den PR-Link prüfen.
 Aktuellen Head, Pull Request und Prüfläufe über den Zweig bzw. die PR in GitHub ermitteln; die Werte hier sind Momentaufnahmen und keine Freigabe.
 Status: **PASS** nur mit überprüfbarer Evidenz; **TEILWEISE** = unvollständig; **OFFEN** = nicht geprüft; **BLOCKIERT** = Pflicht verhindert Vorrelease.
 
@@ -22,7 +22,7 @@ Status: **PASS** nur mit überprüfbarer Evidenz; **TEILWEISE** = unvollständig
 | Integration | Module und Datenübergaben geprüft | Laufzeit-Smoke vorhanden; vollständige Integrationsfälle fehlen | TEILWEISE |
 | GUI / Browser | Echte Browser auf 800 × 600 und Skalierung | `tests/provoware-smoke.spec.js` ist Platzhalter; Node-VM-Test ist kein Browser-Test | BLOCKIERT |
 | Regression | Alte Nutzerdaten bleiben lesbar | Import-Regressionen ergänzt; echte V2.x-Bestände fehlen | TEILWEISE |
-| CI | Pflichtprüfungen grün, keine übersprungenen Tests | `.github/workflows/project-smoke.yml` für Node 20/22; Status nach PR prüfen | TEILWEISE |
+| CI | Pflichtprüfungen grün, keine übersprungenen Tests | PR #26, Lauf 40042415022: Node 20 und 22 erfolgreich; nur Smoke-Tests, keine echten Browserprüfungen | TEILWEISE |
 | Dokumentation | Start, Daten, Fehler, Wiederherstellung | README, TODO, Testprotokoll, diese Matrix; weitere Nachweise offen | TEILWEISE |
 | Release-Vorbereitung | Vollständiger eingefrorener Kandidat | Kein Gesamt-Test, keine technische Freigabe, keine Veröffentlichung | BLOCKIERT |
 
@@ -32,7 +32,7 @@ Ziel: Ein fehlgeschlagener Import darf nicht als erfolgreich gelten und soll zuv
 
 Umgesetzt: Browser-Speicher vor Import prüfen, Sicherung vor Schreibbeginn verbindlich erstellen, bei Fehlern bisherige Werte zurücksetzen, interne Sicherung aus Export ausschließen, Alt-Exporte mit internem Sicherungsschlüssel tolerieren, Wiederherstellungsaktion mit Bestätigung anbieten. Die Wiederherstellung entfernt auch erst durch den Import entstandene Schlüssel.
 
-Nachweise: Testfälle in `browser-smoke.mjs` für erfolgreichen Import, ungültige Schlüssel, Speichermangel nach erstem Schreibvorgang, fehlgeschlagene Sicherung, Alt-Export, Wiederherstellung mit zusätzlichem Schlüssel. Vor GitHub-Übertragung zusätzlich Laufzeitlogik mit isoliertem Browser-Speicher simuliert (PASS). **GitHub-CI erst nach PR-Lauf bewerten.**
+Nachweise: Testfälle in `browser-smoke.mjs` für erfolgreichen Import, ungültige Schlüssel, Speichermangel nach erstem Schreibvorgang, fehlgeschlagene Sicherung, Alt-Export, Wiederherstellung mit zusätzlichem Schlüssel. Vor GitHub-Übertragung zusätzlich Laufzeitlogik mit isoliertem Browser-Speicher simuliert (PASS). **GitHub-CI:** https://github.com/provoware/MMT2026/actions/runs/40042415022 – Node 20 und Node 22 erfolgreich für den zuvor genannten Head. Dies ersetzt keine Browser- und Gesamtprüfung.
 
 Grenze: Browser-Speicher ist nicht transaktional. Bei Stromausfall mitten im Schreiben oder wenn selbst die Rücksetzung am Speichermangel scheitert, ist keine vollständige Wiederherstellung garantiert. In diesem Fall bleibt die zuletzt gespeicherte Sicherung nach Möglichkeit erhalten; zusätzlich ist ein externer JSON-Export erforderlich.
 
