@@ -13,3 +13,15 @@
 - Startskript meldet Browseradresse, Fallback und Datensicherungs-Hinweis verständlicher.
 - Layout-Auswahl laienfreundlicher beschriftet und mit kurzem Sicherheitshinweis ergänzt: Der Reset betrifft nur die Ansicht, nicht die gespeicherten Inhalte.
 - Layoutspeicherung robuster gemacht: ungültige gespeicherte Grid-Werte fallen auf `auto` zurück.
+
+## 2026-10-24 – Vorrelease-Importabsicherung
+- Import prüft verfügbaren Browser-Speicher und legt vor Änderungen eine Sicherung an; bei Fehlern wird zurückgesetzt.
+- Export schließt die interne Import-Sicherung aus, damit Sicherungen nicht immer größer werden.
+- Import-Sicherung lässt sich im Export-Center mit Bestätigung wiederherstellen, einschließlich Entfernung erst durch den Import entstandener Schlüssel.
+- Alte Exporte mit interner Sicherung bleiben importierbar; Regressionstests für Speicherfehler und Wiederherstellung ergänzt.
+- Grenzen und offene Release-Pflichten in docs/RELEASE_PFLICHTMATRIX.md dokumentiert.
+
+## 2026-10-24 – Normale Speicherfehler absichern
+- Speichern und Löschen melden Fehler statt eines irreführenden Erfolgs; Formulare bleiben bei Fehler offen.
+- Blockierter Browser-Speicher zählt nicht mehr als dauerhafte Speicherung.
+- Generator meldet fehlgeschlagenen Verlaufsspeicher; Regressionstests für Fehler, Sperre und erneuten Formularversuch.
