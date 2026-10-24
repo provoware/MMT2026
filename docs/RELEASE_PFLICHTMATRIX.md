@@ -1,6 +1,6 @@
 # Release-Pflichtmatrix – MMT2026
 
-Stand: 2026-10-24. PR: https://github.com/provoware/MMT2026/pull/26 (Entwurf). Entwicklungszweig: `codex/mmt2026-safe-import-20261024`. Zuletzt geprüfter PR-Head: `8abe7c24edb2bb90e0b9679dff5a8323da42fec4`; Grundlage: `main` bei `f32edbd7420203dbe21607e7b8b7625c2c8554d6`. Aktuellen Head stets über den PR-Link prüfen.
+Stand: 2026-10-24. PR: https://github.com/provoware/MMT2026/pull/26 (Entwurf). Entwicklungszweig: `codex/mmt2026-safe-import-20261024`. Implementierungs-Commit: `187c394e8fec6b15764da759c431c98e103c3559`; Grundlage: `main` bei `f32edbd7420203dbe21607e7b8b7625c2c8554d6`. Aktuellen Head stets über den PR-Link prüfen.
 Aktuellen Head, Pull Request und Prüfläufe über den Zweig bzw. die PR in GitHub ermitteln; die Werte hier sind Momentaufnahmen und keine Freigabe.
 Status: **PASS** nur mit überprüfbarer Evidenz; **TEILWEISE** = unvollständig; **OFFEN** = nicht geprüft; **BLOCKIERT** = Pflicht verhindert Vorrelease.
 
@@ -18,11 +18,11 @@ Status: **PASS** nur mit überprüfbarer Evidenz; **TEILWEISE** = unvollständig
 | Performance | Messbare Grenzen bei großen Datenmengen | Keine Last- und Speichergrenztests belegt | OFFEN |
 | Wartbarkeit | Gemeinsamer Kern, nachvollziehbare Module | `assets/provoware-core.js`, `modules/_registry.js`; Registry/Manifest-Abgleich offen | TEILWEISE |
 | Installation / Paketierung | Offline-Start unter Linux | `start_linux.sh` vorhanden; Kubuntu-/Pakettest offen | TEILWEISE |
-| Automatische Funktionstests | Datenpfade und Fehlermodi reproduzierbar | `browser-smoke.mjs` und `static-smoke.mjs`; tatsächliche CI-Ergebnisse im PR prüfen | TEILWEISE |
+| Automatische Funktionstests | Datenpfade und Fehlermodi reproduzierbar | `browser-smoke.mjs` prüft Import sowie Schreib-/Löschfehler, blockierten Speicher und Formular-Retry; CI Node 20/22: Lauf 40087890740 PASS | TEILWEISE |
 | Integration | Module und Datenübergaben geprüft | Laufzeit-Smoke vorhanden; vollständige Integrationsfälle fehlen | TEILWEISE |
 | GUI / Browser | Echte Browser auf 800 × 600 und Skalierung | `tests/provoware-smoke.spec.js` ist Platzhalter; Node-VM-Test ist kein Browser-Test | BLOCKIERT |
 | Regression | Alte Nutzerdaten bleiben lesbar | Import-Regressionen ergänzt; echte V2.x-Bestände fehlen | TEILWEISE |
-| CI | Pflichtprüfungen grün, keine übersprungenen Tests | PR #26, Lauf 40042415022: Node 20 und 22 erfolgreich; nur Smoke-Tests, keine echten Browserprüfungen | TEILWEISE |
+| CI | Pflichtprüfungen grün, keine übersprungenen Tests | PR #26, Lauf 40087890740 auf 187c394e: Node 20 und 22 erfolgreich; nur Smoke-Tests, keine echten Browserprüfungen | TEILWEISE |
 | Dokumentation | Start, Daten, Fehler, Wiederherstellung | README, TODO, Testprotokoll, diese Matrix; weitere Nachweise offen | TEILWEISE |
 | Release-Vorbereitung | Vollständiger eingefrorener Kandidat | Kein Gesamt-Test, keine technische Freigabe, keine Veröffentlichung | BLOCKIERT |
 
@@ -49,3 +49,5 @@ Persönliche Kubuntu-/Sicht-Endabnahme erst nach vollständigem technischen Rele
 `Store.set` meldet blockierten Browser-Speicher nun als Fehler statt als Erfolg aus flüchtigem Ersatzspeicher. `Data.save` liefert den Status; `Data.add`/`Data.remove` melden Fehler. Formulare und Löschknöpfe behandeln diese, ohne Eingaben bei Fehler zu verwerfen. Generator-Ausgabe bleibt auch bei nicht speicherbarem Verlauf erhalten.
 
 Prüfbeleg: `browser-smoke.mjs` simuliert Schreib- und Löschfehler, blockierten Speicher und erneutes Formularspeichern. GitHub-CI auf dem finalen Commit prüfen. Noch offen: direkte `Store.set`-Aufrufer, Stromausfall, echte Browser-/Skalierungstests, V2.x-Migration. Keine Release-Freigabe.
+
+GitHub-Nachweis dieses Speicherfehler-Arbeitspakets: https://github.com/provoware/MMT2026/actions/runs/40087890740 (Node.js 20 und 22: PASS; Implementierungs-Commit `187c394e8fec6b15764da759c431c98e103c3559`). Die abschließende Dokumentationsaktualisierung erzeugt einen neuen PR-Head und benötigt einen eigenen CI-Abgleich.
