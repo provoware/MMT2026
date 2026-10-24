@@ -33,3 +33,5 @@ npm test
 ## Grenzen
 
 Alte V2.x-Nutzerdaten waren im Repository nicht vorhanden. Deshalb ist echte Migration gegen Altbestände vorbereitet, aber nicht real belegbar. Ein echter Test mit nicht-technischer Person und Screenreader wurde dokumentiert, aber nicht durchgeführt.
+
+**Speicherhinweis:** Bei einem Speicherfehler bleiben Formulareingaben sichtbar. Der Eintrag wurde dann **nicht dauerhaft gespeichert**. Speicherzugriff prüfen und erneut speichern; regelmäßig JSON exportieren.

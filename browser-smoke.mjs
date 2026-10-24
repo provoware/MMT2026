@@ -50,4 +50,36 @@ try{context.PV.Exporter.importText(JSON.stringify({store:{[notesKey]:[]}}))}catc
 if(!backupRejected||storage.getItem(notesKey)!==beforeBackupFailure[0]||storage.getItem(backupKey)!==beforeBackupFailure[1])throw Error('Import ohne Sicherung nicht gestoppt');
 context.PV.Exporter.importText(JSON.stringify({store:{[notesKey]:[{id:'legacy'}],[backupKey]:{store:{}}}}));
 if(context.PV.Data.all('notes')[0]?.id!=='legacy')throw Error('Alt-Export mit internem Sicherungsschlüssel abgewiesen');
+
+// Fehler bei normalen Speichervorgängen dürfen keine Erfolgsmeldung auslösen.
+const originalNotes=context.PV.Data.all('notes').map(x=>x.id).join(',');
+storage.failOnce=notesKey;
+let addRejected=false;
+try{context.PV.Data.add('notes',{title:'Nicht gespeichert'})}catch(e){addRejected=/Speichern fehlgeschlagen/.test(e.message)}
+if(!addRejected||context.PV.Data.all('notes').map(x=>x.id).join(',')!==originalNotes)throw Error('Data.add verschweigt Speicherfehler');
+storage.failOnce=notesKey;
+let removeRejected=false;
+try{context.PV.Data.remove('notes','legacy')}catch(e){removeRejected=/Löschen fehlgeschlagen/.test(e.message)}
+if(!removeRejected||context.PV.Data.all('notes').map(x=>x.id).join(',')!==originalNotes)throw Error('Data.remove verschweigt Speicherfehler');
+const originalSet=storage.setItem;
+storage.setItem=function(k,v){if(k===prefix+'probe')throw Error('Speicher blockiert');return originalSet.call(this,k,v)};
+let blockedRejected=false;
+try{context.PV.Data.add('notes',{title:'Blockiert'})}catch(e){blockedRejected=/Speichern fehlgeschlagen/.test(e.message)}
+storage.setItem=originalSet;
+if(!blockedRejected||context.PV.Data.all('notes').map(x=>x.id).join(',')!==originalNotes)throw Error('Flüchtiger Speicher täuscht dauerhafte Speicherung vor');
+const form={dataset:{save:'notes'},value:'Formulareingabe',onsubmit:null};
+const queryAll=context.document.querySelectorAll;
+context.document.querySelectorAll=selector=>selector==='[data-save]'?[form]:[];
+context.FormData=class{constructor(){return [['title','Formulareingabe'],['text','Bleibt erhalten']] }};
+let renders=0,lastToast='';
+const oldRender=context.PV.App.render,oldToast=context.PV.UI.toast;
+context.PV.App.render=()=>{renders++};
+context.PV.UI.toast=(msg,cls)=>{lastToast=cls+':'+msg};
+context.PV.App.bindForms();
+storage.failOnce=notesKey;
+form.onsubmit({preventDefault(){}});
+if(renders!==0||!lastToast.startsWith('err:')||form.value!=='Formulareingabe')throw Error('Formular bei Speicherfehler verloren');
+form.onsubmit({preventDefault(){}});
+if(renders!==1||!lastToast.startsWith('ok:'))throw Error('Erneutes Formularspeichern fehlgeschlagen');
+context.PV.App.render=oldRender;context.PV.UI.toast=oldToast;context.document.querySelectorAll=queryAll;
 console.log('BROWSER_SMOKE_PASS');

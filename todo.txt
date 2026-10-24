@@ -22,3 +22,7 @@ Import-Sicherheitsiteration 2026-10-24:
 - Umgesetzt auf Entwicklungszweig: Sicherung vor Import, Rücksetzung bei Schreibfehler, Wiederherstellungsaktion, Regressionstests.
 - Offen: Browser-Speicher bei Stromausfall; normale Speicherfehler sichtbar melden; echten Browser- und Skalierungstest ergänzen.
 - Verbindliche Pflichten/Nachweise: docs/RELEASE_PFLICHTMATRIX.md
+
+Speicherfehler-Pflichtarbeit 2026-10-24:
+- Formular-Speichern, Löschen und Generator-Verlauf melden Schreibfehler; Formulareingaben bleiben bei Fehler erhalten.
+- Offen: Theme/Layout/Defaults und weitere direkte Store.set-Aufrufer absichern, Browser- und Wiederherstellungstests.

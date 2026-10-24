@@ -20,3 +20,8 @@
 - Import-Sicherung lässt sich im Export-Center mit Bestätigung wiederherstellen, einschließlich Entfernung erst durch den Import entstandener Schlüssel.
 - Alte Exporte mit interner Sicherung bleiben importierbar; Regressionstests für Speicherfehler und Wiederherstellung ergänzt.
 - Grenzen und offene Release-Pflichten in docs/RELEASE_PFLICHTMATRIX.md dokumentiert.
+
+## 2026-10-24 – Normale Speicherfehler absichern
+- Speichern und Löschen melden Fehler statt eines irreführenden Erfolgs; Formulare bleiben bei Fehler offen.
+- Blockierter Browser-Speicher zählt nicht mehr als dauerhafte Speicherung.
+- Generator meldet fehlgeschlagenen Verlaufsspeicher; Regressionstests für Fehler, Sperre und erneuten Formularversuch.

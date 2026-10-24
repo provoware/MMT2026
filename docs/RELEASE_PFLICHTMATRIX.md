@@ -8,9 +8,9 @@ Status: **PASS** nur mit überprüfbarer Evidenz; **TEILWEISE** = unvollständig
 |---|---|---|---|
 | Fachfunktionen | Alle zugesagten Module vollständig | `modules/_registry.js` enthält Module; einzelne Module enthalten noch Platzhalter | TEILWEISE |
 | Grenzfälle | Leere, beschädigte, große und alte Eingaben | `browser-smoke.mjs` prüft ungültige Importe, Alt-Export und Speicherfehler; weitere Fälle fehlen | TEILWEISE |
-| Datensicherheit | Kein stiller Datenverlust | Import mit vorab gesicherter Browserkopie, Rücksetzung bei Schreibfehlern; andere Speichervorgänge noch ohne Fehlerdialog | TEILWEISE |
+| Datensicherheit | Kein stiller Datenverlust | Import mit Sicherung/Rücksetzung; Formulare und Löschknöpfe melden Speicherfehler ohne falschen Erfolg; weitere Datenpfade offen | TEILWEISE |
 | Wiederherstellung | Daten vor Import wiederherstellbar | `PV.Exporter.restoreBackup()` und Schaltfläche im Export-Center; Stromausfall nicht getestet | TEILWEISE |
-| Fehlerbehandlung | Verständliche Fehler und sichere Abbrüche | Importfehler melden Sicherungs- und Rücksetzungsstatus; andere Module offen | TEILWEISE |
+| Fehlerbehandlung | Verständliche Fehler und sichere Abbrüche | Import-, Formular- und Löschfehler werden gemeldet; Eingaben bleiben bei Fehler sichtbar; weitere Module offen | TEILWEISE |
 | Sicherheit | Keine fremden Skripte/HTML-Injektion | `PV.safe` vorhanden; vollständige Eingabe-/HTML-/Abhängigkeitsprüfung fehlt | TEILWEISE |
 | Design und Lesbarkeit | Verständliche Oberfläche | Themes und Panel-Ansicht vorhanden; Sichtprüfung offen | TEILWEISE |
 | 800 × 600, hohe Skalierung | Keine abgeschnittene Bedienung | Keine echte Prüfung belegt | OFFEN |
@@ -39,7 +39,13 @@ Grenze: Browser-Speicher ist nicht transaktional. Bei Stromausfall mitten im Sch
 ## Nächste unabhängige Pflichtarbeit
 
 1. Echte Browser- und Tastaturtests statt Platzhalter ergänzen; 800 × 600 und hohe Skalierung automatisiert prüfen.
-2. Fehlgeschlagene normale Speicheraktionen (`Data.add`/`Data.save`) sichtbar melden und Formularinhalt erhalten.
+2. Weitere direkte `Store.set`-Aufrufer (Layout, Theme, Standards) auf Fehlermeldungen prüfen; kritische Löschvorgänge absichern.
 3. V2.x-Migration mit belegten Testdaten, Wiederherstellung nach Unterbrechung und große Datensätze prüfen.
 
 Persönliche Kubuntu-/Sicht-Endabnahme erst nach vollständigem technischen Release-Kandidaten. Kein Merge ohne alle vorgeschriebenen grünen Prüfungen; keine Veröffentlichung ohne Freigabe.
+
+## Arbeitspaket: Normale Speicherfehler sichtbar behandeln (2026-10-24)
+
+`Store.set` meldet blockierten Browser-Speicher nun als Fehler statt als Erfolg aus flüchtigem Ersatzspeicher. `Data.save` liefert den Status; `Data.add`/`Data.remove` melden Fehler. Formulare und Löschknöpfe behandeln diese, ohne Eingaben bei Fehler zu verwerfen. Generator-Ausgabe bleibt auch bei nicht speicherbarem Verlauf erhalten.
+
+Prüfbeleg: `browser-smoke.mjs` simuliert Schreib- und Löschfehler, blockierten Speicher und erneutes Formularspeichern. GitHub-CI auf dem finalen Commit prüfen. Noch offen: direkte `Store.set`-Aufrufer, Stromausfall, echte Browser-/Skalierungstests, V2.x-Migration. Keine Release-Freigabe.
